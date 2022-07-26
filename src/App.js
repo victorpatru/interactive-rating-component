@@ -13,7 +13,6 @@ function App() {
       improve our offering!
       </p>
       <Rating />
-      <button className="button">Submit</button>
     </main>
   );
 }

@@ -74,10 +74,8 @@ p {
     flex: 1;
     width: 100%;
     appearance: none;
-    background-color: var(--dark-blue);
     border: none;
     border-radius: 25px;
-    color: var(--light-grey);
     cursor: pointer;
     height: 50px;
     width: 50px;
@@ -85,12 +83,18 @@ p {
 }
 
 .rating input:hover {
-    opacity: 0.6;
+    background-color: #7b8797;
+    color: var(--white);
+}
+
+.rating input:active {
+    background-color: var(--orange);
 }
 
 .button {
     appearance: none;
     border: none;
+    cursor: pointer;
     background-color: var(--orange);
     color: var(--white);
     height: 45px;
@@ -100,4 +104,9 @@ p {
     text-transform: uppercase;
     font-size: 15px;
     letter-spacing: 3px;
+}
+
+.button:hover {
+    background-color: var(--white);
+    color: var(--orange);
 }
