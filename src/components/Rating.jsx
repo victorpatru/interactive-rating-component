@@ -1,15 +1,27 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import RatingContext from "../context/RatingContext"
 
 function Rating() {
 
     const [ selected, setSelected ] = useState()
 
+    const { setRating } = useContext(RatingContext)
+
     const handleChange = (e) => {
         setSelected(+e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (!selected) {
+            alert('Please choose a rating!')
+        } else {
+            setRating(+e.currentTarget.firstChild.children[selected - 1].children[0].value)
+        }
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <ul className='rating'>
             {Array.from({ length: 5 }, (_, i) => (
                 <li key={`rating-${i + 1}`}>
